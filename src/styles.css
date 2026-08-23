@@ -140,21 +140,28 @@ body::before {
 }
 
 .marquee-track {
-  animation: marquee 38s linear infinite;
+  animation: marquee 42s linear infinite;
 }
 
-.marquee-track:hover {
+.marquee-track-reverse {
+  animation: marquee-reverse 48s linear infinite;
+}
+
+.logo-marquee-rails:hover .marquee-track,
+.logo-marquee-rails:hover .marquee-track-reverse {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
-  .animate-marquee-reverse {
+  .animate-marquee-reverse,
+  .marquee-track,
+  .marquee-track-reverse {
     animation: none;
   }
 
-  .marquee-track {
-    animation: none;
+  .marquee-track,
+  .marquee-track-reverse {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;

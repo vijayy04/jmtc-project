@@ -37,7 +37,6 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
-      <AboutPreview />
       <ServicesSplit />
       <TradingProductsPreview />
       <Brands />
@@ -45,6 +44,7 @@ function HomePage() {
       <Process />
       <Industries />
       <Testimonials />
+      <AboutPreview />
       <CTA />
     </Layout>
   );

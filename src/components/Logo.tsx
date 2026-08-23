@@ -16,7 +16,7 @@ export function Logo({
       alt="Mohifar Jahan Trading and Contracting"
       width={707}
       height={230}
-      className={`w-auto object-contain ${compact ? "h-8" : "h-10 sm:h-11"}`}
+      className={`w-auto object-contain ${compact ? "h-12" : "h-16 sm:h-[4.5rem]"}`}
     />
   );
 }

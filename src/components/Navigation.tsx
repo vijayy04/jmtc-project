@@ -37,7 +37,7 @@ export function Navigation() {
       >
         <div
           className={`container-x mx-auto flex max-w-[1440px] items-center justify-between transition-all ${
-            solid ? "h-16" : "h-20"
+            solid ? "h-24" : "h-28"
           }`}
         >
           <Link to="/" aria-label="MJTC home" className="shrink-0">
