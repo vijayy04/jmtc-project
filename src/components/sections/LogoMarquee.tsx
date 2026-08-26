@@ -3,28 +3,53 @@ import { motion } from "framer-motion";
 export type LogoMarqueeItem = {
   name: string;
   logo: string;
+  bg?: string;
 };
 
-function LogoSeal({ name, logo, index }: LogoMarqueeItem & { index: number }) {
+function isLightBg(hex?: string) {
+  if (!hex) return true;
+  const h = hex.replace("#", "");
+  if (h.length !== 6) return true;
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return (r * 299 + g * 587 + b * 114) / 1000 > 160;
+}
+
+function LogoSeal({
+  name,
+  logo,
+  bg = "#f3efe8",
+  index,
+}: LogoMarqueeItem & { index: number }) {
+  const light = isLightBg(bg);
+
   return (
-    <div className="group flex w-[148px] shrink-0 flex-col items-center gap-3 sm:w-[168px]">
+    <div className="group flex w-[160px] shrink-0 flex-col items-center gap-3 sm:w-[180px]">
       <div className="relative">
         <div className="absolute -left-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-white/15 sm:block" />
-        <div className="flex size-[118px] items-center justify-center rounded-full bg-gradient-to-b from-white/25 via-white/10 to-white/5 p-[1.5px] shadow-[0_20px_40px_-28px_rgba(0,0,0,0.55)] sm:size-[132px]">
-          <div className="relative flex size-full items-center justify-center overflow-hidden rounded-full bg-[#f3efe8] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]">
-            <span className="absolute left-1/2 top-3 -translate-x-1/2 font-display text-[9px] font-semibold tracking-[0.28em] text-brand/35">
+        <div className="flex size-[124px] items-center justify-center rounded-full bg-gradient-to-b from-white/25 via-white/10 to-white/5 p-[1.5px] shadow-[0_20px_40px_-28px_rgba(0,0,0,0.55)] sm:size-[140px]">
+          <div
+            className="relative flex size-full items-center justify-center overflow-hidden rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]"
+            style={{ backgroundColor: bg }}
+          >
+            <span
+              className={`absolute left-1/2 top-3 -translate-x-1/2 font-display text-[9px] font-semibold tracking-[0.28em] ${
+                light ? "text-brand/35" : "text-white/35"
+              }`}
+            >
               {String(index).padStart(2, "0")}
             </span>
             <img
               src={logo}
               alt={name}
               loading="lazy"
-              className="mt-2 max-h-12 max-w-[4.75rem] object-contain transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 sm:max-h-14 sm:max-w-[5.5rem]"
+              className="mt-1 max-h-14 max-w-[5.5rem] object-contain transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 sm:max-h-16 sm:max-w-[6.25rem]"
             />
           </div>
         </div>
       </div>
-      <p className="max-w-[9rem] truncate text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
+      <p className="max-w-[10rem] text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-white/75">
         {name}
       </p>
     </div>
@@ -37,27 +62,18 @@ function buildMarqueeTrack(items: LogoMarqueeItem[]) {
   return [...marqueeItems, ...marqueeItems];
 }
 
-function MarqueeRow({
-  items,
-  reverse = false,
-}: {
-  items: LogoMarqueeItem[];
-  reverse?: boolean;
-}) {
+function MarqueeRow({ items }: { items: LogoMarqueeItem[] }) {
   const track = buildMarqueeTrack(items);
 
   return (
     <div className="overflow-hidden">
-      <div
-        className={`flex w-max items-start gap-3 px-2 sm:gap-5 ${
-          reverse ? "marquee-track-reverse" : "marquee-track"
-        }`}
-      >
+      <div className="marquee-track flex w-max items-start gap-3 px-2 sm:gap-5">
         {track.map((item, i) => (
           <LogoSeal
-            key={`${item.name}-${reverse ? "b" : "a"}-${i}`}
+            key={`${item.name}-${i}`}
             name={item.name}
             logo={item.logo}
+            bg={item.bg}
             index={(i % items.length) + 1}
           />
         ))}
@@ -77,10 +93,6 @@ export function LogoMarquee({
   description: string;
   items: LogoMarqueeItem[];
 }) {
-  const rowA = items.filter((_, i) => i % 2 === 0);
-  const rowB = items.filter((_, i) => i % 2 === 1);
-  const secondRow = rowB.length > 0 ? rowB : [...items].reverse();
-
   return (
     <section className="relative overflow-hidden bg-brand py-24 text-white md:py-32">
       <div
@@ -131,10 +143,7 @@ export function LogoMarquee({
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-brand to-transparent sm:w-32"
           aria-hidden
         />
-        <div className="flex flex-col gap-8">
-          <MarqueeRow items={rowA} />
-          <MarqueeRow items={secondRow} reverse />
-        </div>
+        <MarqueeRow items={items} />
       </div>
     </section>
   );

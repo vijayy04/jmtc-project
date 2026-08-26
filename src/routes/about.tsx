@@ -67,8 +67,11 @@ function AboutPage() {
               transition={{ duration: 0.7, delay: i * 0.1 }}
               className="border-t border-border pt-8"
             >
-              <div className="text-xs font-semibold uppercase tracking-[0.28em] text-accent">
-                {b.label}
+              <div className="flex items-center gap-4 text-accent">
+                <span className="h-px w-10 shrink-0 bg-accent md:w-14" />
+                <span className="font-display text-2xl font-semibold uppercase tracking-[0.18em] md:text-3xl lg:text-4xl">
+                  {b.label}
+                </span>
               </div>
               <p className="mt-6 font-display text-2xl font-medium leading-snug tracking-tight text-brand md:text-3xl">
                 {b.body}

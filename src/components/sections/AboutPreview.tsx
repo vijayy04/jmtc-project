@@ -20,9 +20,9 @@ export function AboutPreview() {
           <div className="relative overflow-hidden rounded-sm">
             <img
               src={aboutImg}
-              alt="Industrial precision components"
-              width={1400}
-              height={1600}
+              alt="Mohifar Trading & Contracting office reception"
+              width={768}
+              height={1024}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />

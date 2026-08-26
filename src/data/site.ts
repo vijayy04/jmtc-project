@@ -30,7 +30,7 @@ export const company = {
 export const nav = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
+  { label: "Contracting", to: "/services" },
   { label: "Trading", to: "/trading" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
@@ -83,13 +83,9 @@ export const tradingContent = {
 
 export const industries = [
   "Oil & Gas",
-  "Manufacturing",
   "Industrial Plants",
-  "Commercial",
   "Utilities",
-  "Infrastructure",
-  "Government",
-  "Residential",
+  "Dewatering Pumps",
 ];
 
 export const aboutContent = {

@@ -36,10 +36,12 @@ export function PageHeader({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-accent"
+          className="flex items-center gap-4 text-accent"
         >
-          <span className="h-px w-10 bg-accent" />
-          {eyebrow}
+          <span className="h-px w-10 shrink-0 bg-accent md:w-14" />
+          <span className="font-display text-2xl font-semibold uppercase tracking-[0.18em] md:text-3xl lg:text-4xl">
+            {eyebrow}
+          </span>
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
