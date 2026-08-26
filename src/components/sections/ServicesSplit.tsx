@@ -62,7 +62,7 @@ export function ServicesSplit() {
                   >
                     {c.index}
                   </span>
-                  <div className="absolute left-5 top-5 z-10 flex items-center gap-3 rounded-full bg-accent px-5 py-3 shadow-[0_18px_40px_-16px_rgba(170,25,69,0.85)] md:left-6 md:top-6 md:gap-4 md:px-6 md:py-3.5">
+                  <div className="absolute left-5 top-5 z-10 flex items-center gap-3 rounded-full bg-accent px-5 py-3 shadow-[0_18px_40px_-16px_rgba(170,29,71,0.85)] md:left-6 md:top-6 md:gap-4 md:px-6 md:py-3.5">
                     <span className="font-display text-3xl font-semibold leading-none tracking-tight text-white md:text-4xl">
                       {c.index}
                     </span>

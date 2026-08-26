@@ -101,9 +101,9 @@ export function LogoMarquee({
           className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
         >
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-3 py-1.5">
-              <span className="size-1.5 rounded-full bg-accent" />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-accent">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 px-4 py-2 md:px-5 md:py-2.5">
+              <span className="size-2 rounded-full bg-accent" />
+              <p className="font-display text-base font-semibold uppercase tracking-[0.18em] text-accent md:text-xl lg:text-2xl">
                 {eyebrow}
               </p>
             </div>

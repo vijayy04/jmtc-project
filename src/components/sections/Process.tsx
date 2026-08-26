@@ -7,12 +7,25 @@ export function Process() {
     <section className="relative overflow-hidden bg-brand py-28 text-white md:py-40">
       <div className="absolute inset-0 grid-noise opacity-20" aria-hidden />
       <div className="container-x relative mx-auto max-w-[1440px]">
-        <SectionHeading
-          invert
-          eyebrow="Our Process"
-          title={<>From consultation to lifetime support.</>}
-          intro="A disciplined seven-step process gives every project the same precision — regardless of scale or urgency."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center gap-4"
+        >
+          <span className="h-px w-10 bg-accent md:w-14" />
+          <p className="font-display text-2xl font-semibold uppercase tracking-[0.18em] text-accent md:text-3xl lg:text-4xl">
+            Our Process
+          </p>
+        </motion.div>
+        <div>
+          <SectionHeading
+            invert
+            title={<>From consultation to lifetime support.</>}
+            intro="A disciplined seven-step process gives every project the same precision — regardless of scale or urgency."
+          />
+        </div>
 
         <div className="mt-20">
           {processSteps.map((s, i) => (

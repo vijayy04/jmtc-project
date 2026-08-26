@@ -33,7 +33,7 @@ export function Hero() {
 
         <div className="mt-8 max-w-6xl">
           <h1 className="font-display text-balance text-[clamp(2.75rem,7.5vw,7rem)] font-semibold leading-[0.94] tracking-tight">
-            {["Engineering.", "Contracting.", "Industrial Trading."].map((word, i) => (
+            {["Engineering", "Contracting", "Industrial Trading"].map((word, i) => (
               <motion.span
                 key={word}
                 initial={{ opacity: 0, y: 40 }}
@@ -45,17 +45,7 @@ export function Hero() {
                 }}
                 className="block"
               >
-                {i === 2 ? (
-                  <>
-                    Industrial<span className="text-accent">.</span> Trading
-                    <span className="text-accent">.</span>
-                  </>
-                ) : (
-                  <>
-                    {word.replace(".", "")}
-                    <span className="text-accent">.</span>
-                  </>
-                )}
+                {word}
               </motion.span>
             ))}
           </h1>

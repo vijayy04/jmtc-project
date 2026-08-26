@@ -28,13 +28,13 @@
   --muted: #f4f7fb;
   --muted-foreground: #475569;
   --border: #e2e8f0;
-  --brand: #09224a;
+  --brand: #02225f;
   --brand-foreground: #ffffff;
-  --accent: #aa1945;
+  --accent: #aa1d47;
   --accent-foreground: #ffffff;
   --surface: #f4f7fb;
-  --shadow-brand: 0 24px 60px -28px rgba(9, 34, 74, 0.28);
-  --shadow-accent: 0 20px 50px -22px rgba(170, 25, 69, 0.45);
+  --shadow-brand: 0 24px 60px -28px rgba(2, 34, 95, 0.28);
+  --shadow-accent: 0 20px 50px -22px rgba(170, 29, 71, 0.45);
 }
 
 * {
@@ -96,7 +96,7 @@ body::before {
   border: 1px solid color-mix(in oklab, white 55%, transparent);
   box-shadow:
     inset 0 1px 0 color-mix(in oklab, white 70%, transparent),
-    0 12px 40px -24px rgba(9, 34, 74, 0.18);
+    0 12px 40px -24px rgba(2, 34, 95, 0.18);
 }
 
 @utility shadow-brand {
@@ -116,7 +116,7 @@ body::before {
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, #09224a 25%, transparent),
+    color-mix(in oklab, #02225f 25%, transparent),
     transparent
   );
 }
@@ -170,7 +170,7 @@ body::before {
 
 .grid-noise {
   background-image:
-    linear-gradient(to right, rgba(9, 34, 74, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(9, 34, 74, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(2, 34, 95, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 34, 95, 0.06) 1px, transparent 1px);
   background-size: 64px 64px;
 }
