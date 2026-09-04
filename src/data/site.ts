@@ -196,7 +196,12 @@ export const industries: Industry[] = [
       "We combine technical expertise, quality workmanship, safety, and reliable project execution to deliver practical engineering solutions for commercial, industrial, and infrastructure projects.",
     ],
   },
-  { title: "Infrastructure", slug: "infrastructure" },
+  {
+    title: "Infrastructure",
+    slug: "infrastructure",
+    summary:
+      "Our infrastructure supports efficient delivery of industrial trading, contracting, and engineering solutions. With integrated technical capabilities and project support, we ensure reliable execution tailored to client requirements.",
+  },
   { title: "Structural Engineering Services", slug: "structural-engineering-services" },
   { title: "Civil Engineering Services", slug: "civil-engineering-services" },
   {

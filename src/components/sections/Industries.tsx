@@ -77,11 +77,11 @@ export function Industries() {
                     <div className="font-display text-xl font-semibold leading-snug tracking-tight text-brand">
                       {industry.title}
                     </div>
-                    {industry.summary && (
-                      <p className="mt-2 text-base leading-relaxed text-foreground/80">
+                    {industry.summary ? (
+                      <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                         {industry.summary}
                       </p>
-                    )}
+                    ) : null}
                   </div>
                 </Link>
               </motion.div>
