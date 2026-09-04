@@ -200,7 +200,7 @@ export const industries: Industry[] = [
     title: "Infrastructure",
     slug: "infrastructure",
     summary:
-      "Our infrastructure supports efficient delivery of industrial trading, contracting, and engineering solutions. With integrated technical capabilities and project support, we ensure reliable execution tailored to client requirements.",
+      "Reliable infrastructure supporting efficient industrial supply, contracting, and project execution.",
   },
   { title: "Structural Engineering Services", slug: "structural-engineering-services" },
   { title: "Civil Engineering Services", slug: "civil-engineering-services" },
